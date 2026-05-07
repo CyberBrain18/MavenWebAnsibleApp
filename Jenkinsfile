@@ -12,7 +12,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'master', url: 'https://github.com/ShruthiBGowda/MavenAnsibleWebApp1-CICD.git'
+                git branch: 'master', url: 'https://github.com/CyberBrain18/MavenWebAnsibleApp.git'
             }
         }
 
@@ -30,7 +30,7 @@ pipeline {
         stage('Deploy') {
             steps {
                sh 'mvn clean package'  
-               sh 'ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
+               sh '/usr/bin/ansible-playbook ansible/playbook.yml -i ansible/hosts.ini'
             }
         }
 
